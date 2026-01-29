@@ -70,12 +70,6 @@ const AboutSection = () => {
               </a>
             </div>
 
-            <a
-              href="https://parthh.in/about"
-              className="inline-block mt-6 text-accent hover:underline"
-            >
-              Dive in deeper →
-            </a>
           </motion.div>
 
           {/* Image Grid */}
