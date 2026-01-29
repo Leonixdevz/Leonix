@@ -6,13 +6,7 @@ const navItems = [
   { label: "Home", href: "#" },
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
-  { label: "Blogs", href: "https://parthh.in/blogs" },
-];
-
-const moreItems = [
-  { label: "Links", href: "https://parthh.in/links" },
-  { label: "Uses", href: "https://parthh.in/uses" },
-  { label: "Guestbook", href: "https://parthh.in/guestbook" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -50,38 +44,8 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <div className="relative group">
-            <button className="px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors flex items-center gap-1">
-              More
-              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className="absolute top-full right-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 glass rounded-2xl p-2 min-w-[150px]">
-              {moreItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="block px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
 
-        {/* CTA + Theme */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="https://parthh.in/book-call"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full border border-border text-sm font-medium hover:bg-secondary transition-colors"
-          >
-            Book a Call
-          </a>
-        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -99,7 +63,7 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden mt-4 glass rounded-2xl p-4"
         >
-          {[...navItems, ...moreItems].map((item) => (
+          {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
@@ -109,14 +73,6 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <a
-            href="https://parthh.in/book-call"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block mt-4 px-4 py-3 rounded-full bg-accent text-accent-foreground text-center font-medium"
-          >
-            Book a Call
-          </a>
         </motion.div>
       )}
     </motion.header>

@@ -59,14 +59,12 @@ const ContactSection = () => {
 
             {/* CTA Button */}
             <motion.a
-              href="https://parthh.in/contact"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="mt-8 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-accent-foreground font-semibold hover:opacity-90 transition-opacity glow-accent"
             >
-              Connect Now
+              Get in Touch
             </motion.a>
           </div>
         </motion.div>

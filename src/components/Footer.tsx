@@ -27,28 +27,25 @@ const Footer = () => {
             </p>
           </motion.a>
 
-          {/* Guestbook */}
-          <motion.a
-            href="https://parthh.in/guestbook"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Community Card */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="card-gradient rounded-3xl p-6 border border-border hover:border-accent/30 transition-colors group"
+            className="card-gradient rounded-3xl p-6 border border-border"
           >
-            <p className="text-xs text-muted-foreground mb-2">Visitors</p>
+            <p className="text-xs text-muted-foreground mb-2">Community</p>
             <h3 className="text-xl font-bold text-foreground mb-2">
-              Leave your{" "}
-              <span className="font-serif italic font-normal">signature</span>
+              Join the{" "}
+              <span className="font-serif italic font-normal">journey</span>
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Let me know you were here.
+              Building the future together.
             </p>
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
-                {["GP", "YB", "AS"].map((initials, i) => (
+                {["LX", "AI", "DEV"].map((initials, i) => (
                   <div
                     key={i}
                     className="w-8 h-8 rounded-full bg-secondary border-2 border-background flex items-center justify-center text-xs font-bold"
@@ -57,9 +54,9 @@ const Footer = () => {
                   </div>
                 ))}
               </div>
-              <span className="text-xs text-muted-foreground">Join others</span>
+              <span className="text-xs text-muted-foreground">Growing community</span>
             </div>
-          </motion.a>
+          </motion.div>
         </div>
 
         {/* Bottom Section */}
