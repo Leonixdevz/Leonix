@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Linkedin, Github, Twitter } from "lucide-react";
+import { Linkedin, Github, Facebook, Instagram } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -22,30 +22,31 @@ const AboutSection = () => {
 
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I'm Parth Sharma, an engineering-driven developer who turns complex
-                technical challenges into high-speed web products. I manage the
-                entire stack with a focus on clean, reusable code and seamless
-                performance.
+                Hi, I'm Toheeb Adeleke—a Full-Stack Developer and Software Engineer 
+                with a passion for creating modern, user-friendly, and scalable 
+                digital solutions. My journey into tech began with curiosity for 
+                problem-solving and design.
               </p>
               <p>
-                I excel in Next.js and full-stack architecture, always delivering
-                modern solutions that actually solve problems for every user.
+                From building responsive web applications to developing mobile apps 
+                and implementing AI solutions, I thrive on turning ideas into reality. 
+                I believe in writing clean, maintainable code and creating intuitive 
+                user experiences that make a difference.
               </p>
               <p>
-                As the founder of Rune, I manage platforms like Rune AI and Rune
-                Hub. Building a startup ecosystem has taught me how to ship
-                products that scale.
+                I have expertise in React, Next.js, TypeScript, Node.js, Flutter, 
+                and various backend technologies. I'm constantly exploring emerging 
+                technologies and contributing to open-source projects.
               </p>
               <p className="text-foreground font-medium">
-                My code is built to last, helping your startup reach the next
-                level!
+                Let's connect and discuss your project!
               </p>
             </div>
 
             {/* Social Links */}
             <div className="flex gap-4 mt-8">
               <a
-                href="https://linkedin.com/in/ksparth128"
+                href="https://www.linkedin.com/in/leonixadeleke"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors"
@@ -53,7 +54,7 @@ const AboutSection = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com/ksparth12"
+                href="https://github.com/Adeleonix"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors"
@@ -61,12 +62,20 @@ const AboutSection = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://x.com/ksparth12"
+                href="https://web.facebook.com/people/Toheeb-Adeleke/61580642197907/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors"
               >
-                <Twitter className="w-5 h-5" />
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://instagram.com/leonixdevz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
 
@@ -80,7 +89,7 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="grid grid-cols-3 gap-4"
           >
-            {["EAT", "TRAVEL", "CODE"].map((label, i) => (
+            {["BUILD", "CREATE", "CODE"].map((label, i) => (
               <div
                 key={label}
                 className="aspect-[3/4] rounded-2xl overflow-hidden relative group"
@@ -88,9 +97,9 @@ const AboutSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent z-10" />
                 <div 
                   className={`absolute inset-0 ${
-                    i === 0 ? 'bg-gradient-to-br from-orange-500/30 to-red-500/20' :
-                    i === 1 ? 'bg-gradient-to-br from-blue-500/30 to-cyan-500/20' :
-                    'bg-gradient-to-br from-accent/30 to-emerald-500/20'
+                    i === 0 ? 'bg-gradient-to-br from-accent/30 to-accent/10' :
+                    i === 1 ? 'bg-gradient-to-br from-accent/20 to-accent/5' :
+                    'bg-gradient-to-br from-accent/25 to-accent/10'
                   }`}
                 />
                 <span className="absolute bottom-4 left-4 z-20 text-2xl font-bold text-foreground">

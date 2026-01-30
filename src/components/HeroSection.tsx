@@ -1,10 +1,19 @@
 import { motion } from "framer-motion";
 import { MapPin, Code2 } from "lucide-react";
-import { useTimeTheme, getGreeting } from "@/hooks/useTimeTheme";
+import { useState, useEffect } from "react";
+import TypingGreeting from "./TypingGreeting";
 
 const HeroSection = () => {
-  const timeOfDay = useTimeTheme();
-  const greeting = getGreeting(timeOfDay);
+  const [showGreeting, setShowGreeting] = useState(true);
+
+  useEffect(() => {
+    // Hide greeting after 6 seconds
+    const timer = setTimeout(() => {
+      setShowGreeting(false);
+    }, 6000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
@@ -37,9 +46,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 md:mt-8"
         >
-          <p className="text-accent text-sm md:text-base tracking-[0.2em] uppercase mb-1">
-            {greeting}
-          </p>
+          {/* Typing Greeting */}
+          <TypingGreeting show={showGreeting} />
+          
           <p className="text-muted-foreground text-sm md:text-base tracking-[0.3em] uppercase mb-2">
             I design and build products that
           </p>
@@ -63,7 +72,7 @@ const HeroSection = () => {
           </div>
           <div>
             <p className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase">Based in</p>
-            <p className="text-sm font-semibold text-foreground">Global</p>
+            <p className="text-sm font-semibold text-foreground">Ogun, Nigeria</p>
           </div>
         </div>
 
@@ -71,7 +80,7 @@ const HeroSection = () => {
         <div className="flex items-center gap-3">
           <div>
             <p className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase text-right">Full Stack Dev,</p>
-            <p className="text-sm font-semibold text-foreground text-right">& <span className="text-muted-foreground">DESIGNER</span></p>
+            <p className="text-sm font-semibold text-foreground text-right">& <span className="text-muted-foreground">Software Engineer</span></p>
           </div>
           <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
             <Code2 className="w-4 h-4 text-accent" />

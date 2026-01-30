@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { Mail, Copy, Check, Twitter, Instagram, Dribbble } from "lucide-react";
+import { Mail, Copy, Check, Github, Instagram, Linkedin, Facebook } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
 const ContactSection = () => {
   const [copied, setCopied] = useState(false);
-  const email = "hello@leonix.dev";
+  const email = "olusojleo@gmail.com";
+  const phone = "+234 9074155361";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
@@ -31,46 +32,68 @@ const ContactSection = () => {
                 {/* Profile Image */}
                 <div className="w-32 h-32 mx-auto mb-5 rounded-2xl overflow-hidden bg-gradient-to-br from-accent/40 to-accent/10 p-0.5">
                   <div className="w-full h-full rounded-2xl bg-secondary flex items-center justify-center">
-                    <span className="text-3xl font-bold text-accent">LX</span>
+                    <span className="text-3xl font-bold text-accent">TA</span>
                   </div>
                 </div>
                 
                 {/* Name & Role */}
                 <h3 className="text-xl font-bold text-foreground font-serif italic">
-                  Leonix
+                  Toheeb Adeleke
                 </h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Product Designer & Developer
+                  Full-Stack Developer
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Available Worldwide
+                  Ogun, Nigeria
                 </p>
                 
                 {/* Social Icons */}
                 <div className="flex items-center justify-center gap-3 mt-4">
-                  <a href="#" className="p-2 rounded-full hover:bg-secondary transition-colors">
-                    <Dribbble className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+                  <a 
+                    href="https://github.com/Adeleonix" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full hover:bg-secondary transition-colors"
+                  >
+                    <Github className="w-4 h-4 text-muted-foreground hover:text-foreground" />
                   </a>
-                  <a href="#" className="p-2 rounded-full hover:bg-secondary transition-colors">
-                    <Twitter className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+                  <a 
+                    href="https://www.linkedin.com/in/leonixadeleke" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full hover:bg-secondary transition-colors"
+                  >
+                    <Linkedin className="w-4 h-4 text-muted-foreground hover:text-foreground" />
                   </a>
-                  <a href="#" className="p-2 rounded-full hover:bg-secondary transition-colors">
+                  <a 
+                    href="https://instagram.com/leonixdevz" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full hover:bg-secondary transition-colors"
+                  >
                     <Instagram className="w-4 h-4 text-muted-foreground hover:text-foreground" />
                   </a>
-                  <a href="#" className="p-2 rounded-full hover:bg-secondary transition-colors">
-                    <Mail className="w-4 h-4 text-muted-foreground hover:text-foreground" />
+                  <a 
+                    href="https://web.facebook.com/people/Toheeb-Adeleke/61580642197907/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full hover:bg-secondary transition-colors"
+                  >
+                    <Facebook className="w-4 h-4 text-muted-foreground hover:text-foreground" />
                   </a>
                 </div>
 
-                {/* CTA Button */}
-                <motion.button
+                {/* WhatsApp CTA */}
+                <motion.a
+                  href="https://wa.me/2349074155361"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  onClick={handleCopy}
-                  className="mt-6 w-full py-3 rounded-full bg-accent text-accent-foreground font-semibold hover:opacity-90 transition-opacity"
+                  className="mt-6 w-full py-3 rounded-full bg-accent text-accent-foreground font-semibold hover:opacity-90 transition-opacity block text-center"
                 >
                   Let's Talk
-                </motion.button>
+                </motion.a>
               </div>
             </motion.div>
           </div>
@@ -84,7 +107,7 @@ const ContactSection = () => {
               viewport={{ once: true }}
               className="card-gradient rounded-3xl p-8 md:p-12 border border-border relative overflow-hidden"
             >
-              {/* Glow effect */}
+              {/* Subtle accent */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
               
               <div className="relative z-10">
@@ -94,14 +117,15 @@ const ContactSection = () => {
                 </span>
 
                 <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-                  Let's build something{" "}
+                  Have a project in mind?{" "}
                   <span className="font-serif italic font-normal">
-                    that actually works.
+                    I'd love to hear from you.
                   </span>
                 </h2>
 
                 <p className="text-muted-foreground mb-8 max-w-lg">
-                  Have a project in mind? Let's collaborate and create something extraordinary together.
+                  Let's collaborate and create something extraordinary together. 
+                  From websites to mobile apps, AI integration to database optimization.
                 </p>
 
                 {/* Email button */}
@@ -121,20 +145,28 @@ const ContactSection = () => {
                 </motion.button>
                 <p className="text-sm text-muted-foreground mt-2">Tap to copy email</p>
 
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-border">
-                  <div>
-                    <p className="text-2xl md:text-3xl font-bold text-foreground">5+</p>
-                    <p className="text-sm text-muted-foreground">Years Experience</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl md:text-3xl font-bold text-foreground">50+</p>
-                    <p className="text-sm text-muted-foreground">Projects Delivered</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl md:text-3xl font-bold text-foreground">100%</p>
-                    <p className="text-sm text-muted-foreground">Client Satisfaction</p>
-                  </div>
+                {/* Phone */}
+                <p className="text-sm text-muted-foreground mt-4">
+                  Or call: <a href="tel:+2349074155361" className="text-foreground hover:text-accent transition-colors">{phone}</a>
+                </p>
+
+                {/* Services */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-12 pt-8 border-t border-border">
+                  {[
+                    "Web Development",
+                    "Mobile Apps",
+                    "AI Integration",
+                    "API Development",
+                    "UI/UX Design",
+                    "Database Design"
+                  ].map((service) => (
+                    <span 
+                      key={service}
+                      className="text-sm text-muted-foreground px-3 py-2 rounded-lg bg-secondary/50"
+                    >
+                      {service}
+                    </span>
+                  ))}
                 </div>
               </div>
             </motion.div>

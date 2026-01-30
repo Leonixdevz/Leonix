@@ -1,34 +1,34 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "ReactJS", icon: "⚛️" },
-  { name: "NextJS", icon: "▲" },
+  { name: "React", icon: "⚛️" },
+  { name: "Next.js", icon: "▲" },
   { name: "TypeScript", icon: "TS" },
   { name: "Tailwind CSS", icon: "🎨" },
-  { name: "Framer Motion", icon: "🎬" },
   { name: "Node.js", icon: "🟢" },
+  { name: "Python", icon: "🐍" },
+  { name: "Flutter", icon: "💙" },
   { name: "PostgreSQL", icon: "🐘" },
   { name: "MongoDB", icon: "🍃" },
-  { name: "Prisma", icon: "◆" },
-  { name: "Docker", icon: "🐳" },
-  { name: "AWS", icon: "☁️" },
-  { name: "Vercel", icon: "▲" },
+  { name: "Express", icon: "⚡" },
+  { name: "Flask", icon: "🌶️" },
+  { name: "Figma", icon: "🎯" },
   { name: "Git", icon: "⎇" },
   { name: "GitHub", icon: "🐙" },
-  { name: "Linux", icon: "🐧" },
-  { name: "Zustand", icon: "🐻" },
+  { name: "Godot", icon: "🎮" },
+  { name: "YOLO/ML", icon: "🤖" },
 ];
 
 const attributes = [
+  "Responsive",
+  "Scalable",
   "User-Friendly",
-  "Adaptive",
-  "Fluid",
-  "Future-Proof",
-  "SEO-Ready",
-  "Immersive",
-  "Protected",
-  "Dependable",
-  "Captivating",
+  "Modern",
+  "Performant",
+  "Clean Code",
+  "AI-Powered",
+  "Cross-Platform",
+  "Secure",
 ];
 
 const SkillsSection = () => {
@@ -45,7 +45,7 @@ const SkillsSection = () => {
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
             MY SKILLSET{" "}
             <span className="font-serif italic font-normal text-muted-foreground">
-              The Magic Behind
+              The Tech Stack
             </span>
           </h2>
         </motion.div>
