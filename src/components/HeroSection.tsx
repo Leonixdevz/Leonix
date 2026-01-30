@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { MapPin, Code2 } from "lucide-react";
+import { useTimeTheme, getGreeting } from "@/hooks/useTimeTheme";
 
 const HeroSection = () => {
+  const timeOfDay = useTimeTheme();
+  const greeting = getGreeting(timeOfDay);
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
       {/* Background gradient */}
@@ -33,6 +37,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 md:mt-8"
         >
+          <p className="text-accent text-sm md:text-base tracking-[0.2em] uppercase mb-1">
+            {greeting}
+          </p>
           <p className="text-muted-foreground text-sm md:text-base tracking-[0.3em] uppercase mb-2">
             I design and build products that
           </p>
@@ -51,15 +58,12 @@ const HeroSection = () => {
       >
         {/* Location badge */}
         <div className="flex items-center gap-3">
-          <div className="relative">
-            <div className="absolute inset-0 bg-accent rounded-full blur-md opacity-50" />
-            <div className="relative w-8 h-8 rounded-full bg-accent flex items-center justify-center">
-              <MapPin className="w-4 h-4 text-accent-foreground" />
-            </div>
+          <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+            <MapPin className="w-4 h-4 text-accent" />
           </div>
           <div>
             <p className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase">Based in</p>
-            <p className="text-sm font-semibold text-foreground">Noida, <span className="text-muted-foreground">INDIA</span></p>
+            <p className="text-sm font-semibold text-foreground">Global</p>
           </div>
         </div>
 
@@ -69,11 +73,8 @@ const HeroSection = () => {
             <p className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase text-right">Full Stack Dev,</p>
             <p className="text-sm font-semibold text-foreground text-right">& <span className="text-muted-foreground">DESIGNER</span></p>
           </div>
-          <div className="relative">
-            <div className="absolute inset-0 bg-accent rounded-full blur-md opacity-50" />
-            <div className="relative w-8 h-8 rounded-full bg-accent flex items-center justify-center">
-              <Code2 className="w-4 h-4 text-accent-foreground" />
-            </div>
+          <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+            <Code2 className="w-4 h-4 text-accent" />
           </div>
         </div>
       </motion.div>
