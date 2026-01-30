@@ -23,13 +23,13 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-4">
           <div className="w-10 h-10 rounded-full bg-foreground flex items-center justify-center">
-            <span className="text-background font-bold text-sm">PS</span>
+            <span className="text-background font-bold text-sm">TA</span>
           </div>
           <div className="hidden sm:block">
             <p className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
-              Creative Engineer
+              Full-Stack Developer
             </p>
-            <p className="text-xs font-medium text-accent">Building the Future</p>
+            <p className="text-xs font-medium text-accent">Software Engineer</p>
           </div>
         </div>
 

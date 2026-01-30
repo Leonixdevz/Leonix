@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Music } from "lucide-react";
+import { Github, Linkedin, Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* GitHub Activity */}
           <motion.a
-            href="https://github.com/ksparth12"
+            href="https://github.com/Adeleonix"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
@@ -19,11 +19,11 @@ const Footer = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <Github className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-              <span className="text-sm text-muted-foreground">Parth's Github</span>
+              <span className="text-sm text-muted-foreground">Leonix's Github</span>
             </div>
-            <p className="text-xs text-muted-foreground mb-1">Latest Push</p>
+            <p className="text-xs text-muted-foreground mb-1">Building</p>
             <p className="text-sm text-foreground font-mono">
-              "Building the future, one commit at a time"
+              "Scalable, efficient applications across the full stack"
             </p>
           </motion.a>
 
@@ -35,42 +35,35 @@ const Footer = () => {
             viewport={{ once: true }}
             className="card-gradient rounded-3xl p-6 border border-border"
           >
-            <p className="text-xs text-muted-foreground mb-2">Community</p>
+            <p className="text-xs text-muted-foreground mb-2">Let's Connect</p>
             <h3 className="text-xl font-bold text-foreground mb-2">
-              Join the{" "}
-              <span className="font-serif italic font-normal">journey</span>
+              Collaborate on your{" "}
+              <span className="font-serif italic font-normal">next project</span>
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Building the future together.
+              Open to freelance opportunities and collaborations.
             </p>
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                {["LX", "AI", "DEV"].map((initials, i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full bg-secondary border-2 border-background flex items-center justify-center text-xs font-bold"
-                  >
-                    {initials}
-                  </div>
-                ))}
-              </div>
-              <span className="text-xs text-muted-foreground">Growing community</span>
-            </div>
+            <a
+              href="https://wa.me/2349074155361"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+            >
+              Start a conversation
+            </a>
           </motion.div>
         </div>
 
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <Music className="w-4 h-4 text-accent animate-pulse" />
-            <span className="text-sm text-muted-foreground">Last Played</span>
-            <span className="text-sm text-foreground">Rakhlo Tum Chupaake</span>
-            <span className="text-sm text-muted-foreground">by Arpit Bala</span>
+            <span className="text-sm text-muted-foreground">Toheeb Adeleke</span>
+            <span className="text-sm text-foreground font-medium">@leonixdevz</span>
           </div>
 
           <div className="flex items-center gap-4">
             <a
-              href="https://linkedin.com/in/ksparth128"
+              href="https://www.linkedin.com/in/leonixadeleke"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-secondary transition-colors"
@@ -78,7 +71,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5 text-muted-foreground hover:text-foreground" />
             </a>
             <a
-              href="https://github.com/ksparth12"
+              href="https://github.com/Adeleonix"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-secondary transition-colors"
@@ -86,19 +79,27 @@ const Footer = () => {
               <Github className="w-5 h-5 text-muted-foreground hover:text-foreground" />
             </a>
             <a
-              href="https://x.com/ksparth12"
+              href="https://instagram.com/leonixdevz"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-secondary transition-colors"
             >
-              <Twitter className="w-5 h-5 text-muted-foreground hover:text-foreground" />
+              <Instagram className="w-5 h-5 text-muted-foreground hover:text-foreground" />
+            </a>
+            <a
+              href="https://web.facebook.com/people/Toheeb-Adeleke/61580642197907/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full hover:bg-secondary transition-colors"
+            >
+              <Facebook className="w-5 h-5 text-muted-foreground hover:text-foreground" />
             </a>
           </div>
         </div>
 
         <div className="mt-8 text-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Parth Sharma. Built with passion & precision.
+            © {new Date().getFullYear()} Leonix (Toheeb Adeleke). Built with passion & precision.
           </p>
         </div>
       </div>
