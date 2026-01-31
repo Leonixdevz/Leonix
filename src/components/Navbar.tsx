@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { gsap } from "gsap";
 import { Sun, Moon, Sunrise, Sunset, Menu, X } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import TypingGreeting from "./TypingGreeting";
@@ -28,13 +29,17 @@ const themeOptions = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [themeOpen, setThemeOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [showGreeting, setShowGreeting] = useState(true);
+  
+  const headerRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
   const themeRef = useRef<HTMLDivElement>(null);
+  
   const { timeOfDay, autoTheme, setAutoTheme, setManualTheme } = useTheme();
-
   const CurrentIcon = themeIcons[timeOfDay];
 
+  // Greeting auto-hide
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowGreeting(false);
@@ -42,14 +47,47 @@ const Navbar = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Initial animation
+  useEffect(() => {
+    if (!headerRef.current) return;
+    
+    gsap.fromTo(
+      headerRef.current,
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+    );
+  }, []);
+
+  // Scroll-based animations
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const scrolled = window.scrollY > 50;
+      
+      if (navRef.current) {
+        gsap.to(navRef.current, {
+          justifyContent: scrolled ? "flex-end" : "center",
+          duration: 0.4,
+          ease: "power2.out",
+        });
+      }
+      
+      if (logoRef.current) {
+        gsap.to(logoRef.current, {
+          opacity: scrolled ? 0 : 1,
+          width: scrolled ? 0 : "auto",
+          marginRight: scrolled ? 0 : "1.5rem",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial state
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Click outside to close theme dropdown
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (themeRef.current && !themeRef.current.contains(e.target as Node)) {
@@ -61,34 +99,31 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+    <header
+      ref={headerRef}
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
+      style={{ opacity: 0 }}
     >
-      <motion.nav
-        animate={{
-          justifyContent: scrolled ? "flex-start" : "center",
-        }}
-        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="max-w-7xl mx-auto flex items-center gap-4"
+      <nav
+        ref={navRef}
+        className="max-w-7xl mx-auto flex items-center"
+        style={{ justifyContent: "center" }}
       >
-        {/* Logo - only visible when scrolled */}
-        <motion.div
-          initial={false}
-          animate={{
-            opacity: scrolled ? 1 : 0,
-            width: scrolled ? "auto" : 0,
-            marginRight: scrolled ? "1rem" : 0,
-          }}
-          transition={{ duration: 0.3 }}
+        {/* Logo with text - visible at top */}
+        <div
+          ref={logoRef}
           className="flex items-center gap-3 overflow-hidden"
         >
-          <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
-            <span className="text-background font-bold text-xs">TA</span>
+          <div className="w-10 h-10 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
+            <span className="text-background font-bold text-sm">TA</span>
           </div>
-        </motion.div>
+          <div className="hidden sm:block whitespace-nowrap">
+            <p className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
+              Full-Stack Developer
+            </p>
+            <p className="text-xs font-medium text-accent">Software Engineer</p>
+          </div>
+        </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-1 glass rounded-full px-2 py-2">
@@ -164,12 +199,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Spacer for centered layout */}
-        <motion.div
-          animate={{ flex: scrolled ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-        />
-
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -177,7 +206,7 @@ const Navbar = () => {
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
-      </motion.nav>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -232,7 +261,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 };
 
