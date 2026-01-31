@@ -8,6 +8,12 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap");
+
 @layer base {
   :root {
     --background: 0 0% 0%;
@@ -28,7 +34,7 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 224 76.3265% 48.0392%;
+    --accent: 152 100% 50%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
@@ -41,8 +47,8 @@
     --radius: 1rem;
 
     /* Custom tokens */
-    --font-sans: 'Inter', system-ui, sans-serif;
-    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: Poppins, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --font-serif: "Libre Caslon Text", ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
 
     /* Gradients */
     --gradient-accent: linear-gradient(135deg, hsl(152 100% 50%), hsl(180 100% 40%));
@@ -51,11 +57,15 @@
     /* Shadows */
     --shadow-glow: 0 0 60px -15px hsl(152 100% 50% / 0.3);
     --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
+    --font-mono: "Cascadia Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   }
 
   .dark {
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
+    --font-serif: "Libre Caslon Text", ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+    --font-mono: "Cascadia Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    --font-sans: Poppins, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   }
 }
 
