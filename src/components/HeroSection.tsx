@@ -1,19 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Code2 } from "lucide-react";
-import { useState, useEffect } from "react";
-import TypingGreeting from "./TypingGreeting";
 
 const HeroSection = () => {
-  const [showGreeting, setShowGreeting] = useState(true);
-
-  useEffect(() => {
-    // Hide greeting after 6 seconds
-    const timer = setTimeout(() => {
-      setShowGreeting(false);
-    }, 6000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
@@ -46,9 +34,6 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 md:mt-8"
         >
-          {/* Typing Greeting */}
-          <TypingGreeting show={showGreeting} />
-          
           <p className="text-muted-foreground text-sm md:text-base tracking-[0.3em] uppercase mb-2">
             I design and build products that
           </p>
