@@ -64,21 +64,22 @@ const Navbar = () => {
     if (scrolled === scrolledRef.current) return;
     scrolledRef.current = scrolled;
 
-    // Batch GSAP animations
+    // Use xPercent for stable transform-based centering
     gsap.to(navContainerRef.current, {
-      x: scrolled ? "-50%" : "0%",
+      xPercent: scrolled ? -50 : 0,
       left: scrolled ? "50%" : "auto",
       right: scrolled ? "auto" : "1.5rem",
       duration: 0.4,
       ease: "power2.out",
+      overwrite: true,
     });
 
     gsap.to(logoTextRef.current, {
       opacity: scrolled ? 0 : 1,
       x: scrolled ? -10 : 0,
-      width: scrolled ? 0 : "auto",
       duration: 0.3,
       ease: "power2.out",
+      overwrite: true,
     });
   }, []);
 
